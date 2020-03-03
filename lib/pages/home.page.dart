@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var bloc = new CalculateBloc();
+  CalculateBloc bloc = new CalculateBloc();
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,8 @@ class _HomePageState extends State<HomePage> {
                       setState(() {
                         bloc.calculate();
                       });
-                    }),
+                    },
+                  ),
           ],
         ),
       ),
