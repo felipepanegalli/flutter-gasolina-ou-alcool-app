@@ -13,7 +13,7 @@ class CalculateBloc {
   var completed = false;
   var resultText = '';
 
-  Future calculate() {
+  calculate() {
     double alc =
         double.parse(alcCtrl.text.replaceAll(new RegExp(r'[,.]'), '')) / 100;
     double gas =
@@ -24,15 +24,13 @@ class CalculateBloc {
     completed = false;
     busy = true;
 
-    return Future.delayed(const Duration(seconds: 1), () {
-      if (res >= 0.7) {
-        resultText = 'Compensa utilizar Gasolina!';
-      } else {
-        resultText = 'Compensa utilizar Álcool!';
-      }
-      busy = false;
-      completed = true;
-    });
+    if (res >= 0.7) {
+      resultText = 'Compensa utilizar Gasolina!';
+    } else {
+      resultText = 'Compensa utilizar Álcool!';
+    }
+    busy = false;
+    completed = true;
   }
 
   reset() {

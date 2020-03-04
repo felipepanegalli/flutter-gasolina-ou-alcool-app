@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: AnimatedContainer(
-        duration: Duration(milliseconds: 1200),
+        duration: Duration(milliseconds: 1),
         color: bloc.color,
         child: ListView(
           children: <Widget>[
